@@ -16,9 +16,7 @@ import {
 
 import { jsPDF } from "jspdf";
 
-const API_URL = "https://6d4dg45t-8000.inc1.devtunnels.ms/predict/";
-// https://6d4dg45t-8000.inc1.devtunnels.ms/predict/  - FOR DEVTUNNEL
-// http://127.0.0.1:8000/predict/ - FOR NORMAL
+const API_URL = "https://plantreg-backend.onrender.com/predict";
 
 const withBackoff = async (apiCall, maxRetries = 5) => {
   let delay = 1000;
