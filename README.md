@@ -38,18 +38,18 @@ Try it out with sample images or upload your own plant leaf photos!
 <div align="center">
 
 ### Home / Upload Interface
-<img width="1917" height="906" alt="Screenshot 2025-12-14 175002" src="https://github.com/user-attachments/assets/6fee7bb6-9296-407c-b620-d741ae8ae51e" />
+<img width="600" height="600" alt="Screenshot 2025-12-14 175002" src="https://github.com/user-attachments/assets/6fee7bb6-9296-407c-b620-d741ae8ae51e" />
 
 
 ### Disease Detection Results
 
-<img width="1917" height="880" alt="Screenshot 2025-12-14 175122" src="https://github.com/user-attachments/assets/4976d380-15fe-4310-b115-2efafd7d7bf0" />
+<img width="600" height="600" alt="Screenshot 2025-12-14 175122" src="https://github.com/user-attachments/assets/4976d380-15fe-4310-b115-2efafd7d7bf0" />
 
 ### Others 
 
-<img width="1910" height="860" alt="Screenshot 2025-12-14 175021" src="https://github.com/user-attachments/assets/a0069b92-2a5f-4d60-b5c0-f4b3a5833953" />
-<img width="1919" height="896" alt="Screenshot 2025-12-14 175028" src="https://github.com/user-attachments/assets/e347140c-7899-4530-b231-6c9d8004c2a2" />
-<img width="1911" height="636" alt="Screenshot 2025-12-14 175135" src="https://github.com/user-attachments/assets/86916339-fb9c-4993-98a5-a5c2ff461432" />
+<img width="600" height="600" alt="Screenshot 2025-12-14 175021" src="https://github.com/user-attachments/assets/a0069b92-2a5f-4d60-b5c0-f4b3a5833953" />
+<img width="600" height="600" alt="Screenshot 2025-12-14 175028" src="https://github.com/user-attachments/assets/e347140c-7899-4530-b231-6c9d8004c2a2" />
+<img width="600" height="600" alt="Screenshot 2025-12-14 175135" src="https://github.com/user-attachments/assets/86916339-fb9c-4993-98a5-a5c2ff461432" />
 
 </div>
 
