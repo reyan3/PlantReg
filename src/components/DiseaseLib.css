@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+.disease-library {
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  animation: wlcm 0.6s;
+}
+
+@keyframes wlcm {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.disease-library h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 3rem;
+  letter-spacing: -1px;
+}
+
+.crop-section {
+  margin-bottom: 4rem;
+}
+
+.crop-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.crop-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #14b8a6;
+  border-radius: 2px;
+}
+
+.disease-item {
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.disease-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.disease-item.open {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.healthy-item {
+  border-left: 5px solid #10b981;
+}
+
+.infected-item {
+  border-left: 5px solid #ef4444;
+}
+
+.disease-header {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.disease-header:hover {
+  background: rgba(217, 217, 217, 0.282);
+}
+
+.disease-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  color: #64748b;
+  transition: all 0.3s;
+}
+
+.disease-item.open .toggle-icon {
+  transform: rotate(90deg);
+  color: #14b8a6;
+}
+
+.status-icon.success {
+  color: #10b981;
+}
+
+.status-icon.danger {
+  color: #ef4444;
+}
+
+.disease-title h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.disease-content {
+  padding: 2rem 2rem;
+  animation: fadeSlide 0.45s ease-out;
+}
+
+.disease-content p {
+  margin: 1rem 0;
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.disease-content strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detail-column h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #14b8a6;
+  position: relative;
+  padding-left: 20px;
+}
+
+.detail-column h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #14b8a6;
+  border-radius: 50%;
+}
+
+/* --- Search Bar Styling --- */
+
+.search-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 3px 2px rgba(20, 184, 166, 0.2);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.2rem;
+}
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 22px;
+  border: 2px dashed #e2e8f0;
+  box-shadow: inset 0 0px 4px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* RESPONSIVENESS AND ANIMATIONS */
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .disease-library {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .disease-library h1 {
+    font-size: 2rem;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .disease-header,
+  .disease-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .crop-section h2 {
+    font-size: 1.5rem;
+  }
+  .disease-title h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .disease-title {
+    gap: 10px;
+  }
+
+  .toggle-icon {
+    font-size: 1.3rem;
+  }
+
+  .status-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* DARK THEME */
+
+.dark .disease-library h1,
+.dark .crop-section h2 {
+  color: #e0e0e0;
+}
+
+.dark .disease-item {
+  background: #1e1e1e; /* Card/Component Background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.dark .disease-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.dark .disease-header:hover {
+  background: #252525; /* Slightly lighter surface for hover */
+}
+
+.dark .disease-title h3 {
+  color: #e0e0e0; /* Primary Text */
+}
+
+/* Content Area */
+.dark .disease-content p {
+  color: #a0a0a0; /* Secondary/Muted Text */
+}
+
+.dark .disease-content strong {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Search Bar Styling */
+.dark .search-input {
+  background: #282828;
+  color: #e0e0e0;
+  border: 2px solid #444444;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.dark .search-input::placeholder {
+  color: #777777;
+}
+
+.dark .search-icon {
+  color: #777777;
+}
+
+.dark .no-results {
+  color: #a0a0a0;
+  background: #1e1e1e;
+  border: 2px dashed #3a3a3a;
+  box-shadow: inset 0 0px 4px 3px rgba(0, 0, 0, 0.2);
+}

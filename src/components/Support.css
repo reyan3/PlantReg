@@ -1,0 +1,280 @@
+/* --- Global Support Container --- */
+.support-container {
+  min-height: 100vh;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: wlcm 0.6s;
+}
+
+.support-container h1 {
+  text-align: center;
+  color: var(--color-primary-dark);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.support-tagline {
+  text-align: center;
+  color: #555;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+/* --- Card Base Styling --- */
+.contact-info-card,
+.resource-card {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info-card {
+  border: 1px solid #c8e6c9;
+}
+
+.resource-card {
+  border: 1px solid #e0e0e0;
+}
+
+.contact-info-card h2,
+.resource-card h2 {
+  color: var(--color-primary-dark);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #a5d6a7;
+}
+
+.contact-info-card p,
+.resource-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* --- Contact Details Section --- */
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.contact-icon {
+  font-size: 1.8em;
+  margin-right: 15px;
+  min-width: 30px;
+  padding-top: 3px;
+}
+
+.email-icon {
+  color: #c0392b;
+}
+.phone-icon {
+  color: #2980b9;
+}
+.address-icon {
+  color: #f39c12;
+}
+
+.contact-text h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.contact-text a {
+  color: #1e8449;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.contact-text a:hover {
+  color: #27ae60;
+}
+
+.contact-text p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* --- Hours of Operation --- */
+.hours-of-operation {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.hours-icon {
+  font-size: 1.5em;
+  color: #2e7d32;
+  margin-right: 10px;
+}
+
+.hours-of-operation p {
+  margin: 0;
+  color: #333;
+  font-size: 1em;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.resource-item {
+  display: flex;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.resource-item:hover {
+  background-color: #f9fdfa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.resource-icon {
+  font-size: 1.5em;
+  margin-right: 15px;
+  min-width: 25px;
+}
+.guide-icon {
+  color: #8e44ad;
+}
+.feedback-icon {
+  color: #2ecc71;
+}
+
+.resource-text {
+  flex-grow: 1;
+}
+
+.resource-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.resource-text p {
+  margin: 0 0 8px 0;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.resource-text a {
+  color: #1e8449;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ANIMATIONS AND RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-container h1{
+    font-size: 2em;
+  }
+  .support-container {
+    padding: 20px;
+  }
+  .support-tagline{
+    font-size: medium;
+  }
+  .contact-text h4{
+    font-size: medium;
+  }
+  .resource-text h3{
+    font-size: medium;
+  }
+}
+
+.dark .support-container h1 {
+  color: #18bd8e;
+}
+
+.dark .support-tagline {
+  color: #aeb6bf;
+  border-bottom: 1px solid #34495e;
+}
+
+.dark .contact-info-card,
+.dark .resource-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.dark .contact-info-card h2,
+.dark .resource-card h2 {
+  color: #18bd8e;
+  border-bottom: 2px solid #3a4750;
+}
+
+.dark .contact-info-card p,
+.dark .resource-card p {
+  color: #c9d2d9;
+}
+
+.dark .contact-text h4 {
+  color: #ffffff;
+}
+
+.dark .contact-text a {
+  color: #18bd8e;
+}
+
+.dark .contact-text a:hover {
+  color: #a5d6a7;
+}
+
+.dark .contact-text p {
+  color: #aeb6bf;
+}
+
+.dark .hours-of-operation {
+  background-color: #18bd8e41;
+}
+
+.dark .hours-icon {
+  color: #6edc6e;
+}
+
+.dark .hours-of-operation p {
+  color: #f0f0f0;
+}
+
+.dark .resource-item {
+  border: none;
+}
+
+.dark .resource-item:hover {
+  background-color: #0101013e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark .resource-text h3 {
+  color: #ffffff;
+}
+
+.dark .resource-text a {
+  color: #18bd8e;
+}
