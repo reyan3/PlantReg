@@ -27,7 +27,7 @@ PlantReg is an intelligent web application that leverages machine learning to de
 
 ## 🔗 Live Demo
 
-**[Launch PlantReg →](https://plantreg.netlify.app/)**
+**[Launch PlantReg →](https://plantregapp.netlify.app/)**
 
 Try it out with sample images or upload your own plant leaf photos!
 ```
