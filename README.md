@@ -30,10 +30,6 @@ PlantReg is an intelligent web application that leverages machine learning to de
 **[Launch PlantReg →](https://plantregapp.netlify.app/)**
 
 Try it out with sample images or upload your own plant leaf photos!
-```
-!Note - Do not aspect to get fast response in your first call as it may take 1 to 3 minutes to give result ,as the backend server goes to sleep in every 15 minutes if no traffic on the website.Try to refresh page after 2-3 minutes if the buffering not
-stops.
-```
 ---
 
 ## 🖼️ Screenshots
