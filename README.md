@@ -83,7 +83,7 @@ Try it out with sample images or upload your own plant leaf photos!
 - **Uvicorn** - ASGI server
 
 ### Machine Learning
-- **Custom CNN Model** - Trained on PlantVillage dataset (or specify your dataset)
+- **Custom CNN Model** - Trained on PlantVillage dataset
 - **Image Classification** - Multi-class disease detection
 - **Data Augmentation** - Improved model robustness
 
