@@ -1,6 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
-# Change: Use AutoImageProcessor instead of DefaultImageProcessor
-from transformers import AutoModelForImageClassification, AutoImageProcessor, pipeline
+from transformers import pipeline
 from PIL import Image
 import io
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,15 +17,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load the model only once
+# -------------------- HEALTH CHECK (FOR UPTIMEROBOT) --------------------
+@app.get("/")
+def root():
+    return {"status": "PlantReg backend is running"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+# -------------------- LOAD MODEL ONCE --------------------
 classifier = pipeline(
     "image-classification",
     model="linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
-    device=-1
+    device=-1  # CPU
 )
 
-
-# 🔥 SMART FUZZY MATCHING FUNCTION (works 100%)
+# -------------------- SMART FUZZY MATCH --------------------
 def match_label(label: str, disease_dict: dict):
     label = label.lower().replace("_", " ").strip()
     keys = list(disease_dict.keys())
@@ -62,4 +69,5 @@ async def predict(file: UploadFile = File(...)):
         **extra_info
     }
 
-#  uvicorn model.disease_detect:app --reload -> To Run in terminal
+# Run locally:
+# uvicorn model.disease_detect:app --reload
