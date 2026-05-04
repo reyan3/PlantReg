@@ -4,18 +4,21 @@
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![React](https://img.shields.io/badge/react-18.0+-61dafb.svg)](https://reactjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-PlantReg is an intelligent web application that leverages machine learning to detect plant diseases from leaf images. Designed for farmers, gardeners, and plant enthusiasts, it provides instant disease analysis and actionable insights to help protect your plants.
+PlantReg is an intelligent web application that leverages machine learning to detect plant diseases from leaf images. Designed for farmers, gardeners, and plant enthusiasts, it provides instant disease analysis and actionable insights to help protect your plants. Now with user authentication and personalized experience!
 
 ---
 
 ## 📋 Table of Contents
 
 - [Live Demo](#-live-demo)
+- [What's New](#-whats-new)
 - [Screenshots](#️-screenshots)
 - [Key Features](#-key-features)
 - [Technologies Used](#️-technologies-used)
 - [Getting Started](#-getting-started)
+- [Firebase Setup](#-firebase-setup)
 - [Project Structure](#-project-structure)
 - [API Documentation](#-api-documentation)
 - [Model Information](#-model-information)
@@ -33,23 +36,45 @@ Try it out with sample images or upload your own plant leaf photos!
 
 ---
 
+## 🆕 What's New
+
+### Version 2.0 Updates
+
+#### 🔐 Firebase Integration
+- **User Authentication** - Secure sign-up and login system powered by Firebase
+- **Google OAuth** - One-click sign-in with your Google account
+- **User Profiles** - Personalized experience with user data persistence
+- **Session Management** - Stay logged in across sessions with secure token handling
+
+#### 🎨 Enhanced UI/UX
+- **Profile Icon** - User avatar/profile icon displayed in the navbar
+- **Authentication Flow** - Seamless login/signup interface with smooth transitions
+- **Responsive Auth UI** - Mobile-friendly authentication dialogs
+
+#### 🐛 Bug Fixes & Improvements
+- Fixed image upload handling for authenticated users
+- Improved error handling across API calls
+- Enhanced mobile responsiveness on authentication screens
+- Optimized Firebase connection pooling
+- Fixed state management issues with user sessions
+- Improved loading states and user feedback
+
+---
+
 ## 🖼️ Screenshots
 
 <div align="center">
 
 ### Home / Upload Interface
-<img width="600" height="600" alt="Screenshot 2025-12-14 175002" src="https://github.com/user-attachments/assets/6fee7bb6-9296-407c-b620-d741ae8ae51e" />
-
+<img width="600" height="300" alt="Screenshot 2025-12-14 175002" src="https://github.com/user-attachments/assets/6fee7bb6-9296-407c-b620-d741ae8ae51e" />
 
 ### Disease Detection Results
+<img width="600" height="300" alt="Screenshot 2025-12-14 175122" src="https://github.com/user-attachments/assets/4976d380-15fe-4310-b115-2efafd7d7bf0" />
 
-<img width="600" height="600" alt="Screenshot 2025-12-14 175122" src="https://github.com/user-attachments/assets/4976d380-15fe-4310-b115-2efafd7d7bf0" />
-
-### Others 
-
-<img width="600" height="600" alt="Screenshot 2025-12-14 175021" src="https://github.com/user-attachments/assets/a0069b92-2a5f-4d60-b5c0-f4b3a5833953" />
-<img width="600" height="600" alt="Screenshot 2025-12-14 175028" src="https://github.com/user-attachments/assets/e347140c-7899-4530-b231-6c9d8004c2a2" />
-<img width="600" height="600" alt="Screenshot 2025-12-14 175135" src="https://github.com/user-attachments/assets/86916339-fb9c-4993-98a5-a5c2ff461432" />
+### Authentication & Profile
+<img width="600" height="300" alt="Screenshot 2025-12-14 175021" src="https://github.com/user-attachments/assets/a0069b92-2a5f-4d60-b5c0-f4b3a5833953" />
+<img width="600" height="300" alt="Screenshot 2025-12-14 175028" src="https://github.com/user-attachments/assets/e347140c-7899-4530-b231-6c9d8004c2a2" />
+<img width="600" height="300" alt="Screenshot 2025-12-14 175135" src="https://github.com/user-attachments/assets/86916339-fb9c-4993-98a5-a5c2ff461432" />
 
 </div>
 
@@ -57,6 +82,7 @@ Try it out with sample images or upload your own plant leaf photos!
 
 ## ✨ Key Features
 
+### 🔍 Core Features
 - 🔍 **Instant Disease Detection** - Upload an image and get results in seconds
 - 🎯 **High Accuracy** - Powered by a trained deep learning model
 - 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
@@ -66,21 +92,36 @@ Try it out with sample images or upload your own plant leaf photos!
 - ⚡ **Fast Processing** - Optimized backend for quick image analysis
 - 🎨 **Modern UI/UX** - Clean, intuitive interface built with React
 
+### 🔐 Authentication & User Management
+- 👤 **User Accounts** - Create and manage your personal account
+- 🔑 **Google Sign-In** - Quick authentication with Google OAuth 2.0
+- 🔒 **Secure Authentication** - Firebase-powered security
+- 📸 **Profile Management** - View and update your profile information
+- 🏷️ **User Icon Display** - Profile picture/avatar shown in navbar
+- 💾 **Detection History** - Save and track your past plant analyses (Coming Soon)
+
 ---
 
 ## 🛠️ Technologies Used
 
 ### Frontend
 - **React.js** - Component-based UI framework
-- **RestAPI** - HTTP client for API requests
 - **React Router** - Navigation and routing
+- **Firebase SDK** - Authentication and user management
+- **Axios** - HTTP client for API requests
+- **CSS3** - Modern styling and animations
 
 ### Backend
 - **FastAPI** - High-performance Python web framework
 - **Python 3.9+** - Core programming language
-- **TensorFlow/PyTorch** - Deep learning framework (specify which you use)
+- **TensorFlow/PyTorch** - Deep learning framework
 - **PIL (Pillow)** - Image processing library
 - **Uvicorn** - ASGI server
+
+### Authentication & Database
+- **Firebase Authentication** - User authentication service
+- **Firebase Firestore** - NoSQL cloud database (optional)
+- **Google OAuth 2.0** - Third-party authentication
 
 ### Machine Learning
 - **Custom CNN Model** - Trained on PlantVillage dataset
@@ -161,6 +202,79 @@ The frontend will start at **http://localhost:5173**
 
 ---
 
+## 🔥 Firebase Setup
+
+To enable authentication features, you need to set up Firebase:
+
+### Step 1: Create a Firebase Project
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Click "Add Project" and follow the setup wizard
+3. Enter your project name (e.g., "PlantReg")
+4. Enable Google Analytics (optional)
+5. Click "Create Project"
+
+### Step 2: Enable Authentication
+
+1. In your Firebase project, go to **Authentication** → **Sign-in method**
+2. Enable **Email/Password** authentication
+3. Enable **Google** authentication
+   - Add your support email
+   - Configure OAuth consent screen if prompted
+
+### Step 3: Register Your Web App
+
+1. In Firebase Console, go to **Project Settings** (gear icon)
+2. Scroll down and click **Add app** → Select **Web** (</> icon)
+3. Register your app with a nickname (e.g., "PlantReg Web")
+4. Copy the Firebase configuration object
+
+### Step 4: Configure Environment Variables
+
+Create a `.env` file in the `frontend` directory:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+### Step 5: Update Firebase Config
+
+In your frontend code (e.g., `src/firebase/config.js`), use the environment variables:
+
+```javascript
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+```
+
+### Step 6: Test Authentication
+
+1. Restart your development server
+2. Try signing up with email/password
+3. Try signing in with Google
+4. Verify your profile icon appears in the navbar
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -181,12 +295,22 @@ PlantReg/
 │   │   ├── components/      # React components
 │   │   │   ├── ImageUpload.jsx
 │   │   │   ├── ResultDisplay.jsx
-│   │   │   └── Header.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Signup.jsx
+│   │   │   └── ProfileIcon.jsx
+│   │   ├── firebase/        # Firebase configuration
+│   │   │   ├── config.js    # Firebase initialization
+│   │   │   └── auth.js      # Authentication helpers
+│   │   ├── context/         # React Context
+│   │   │   └── AuthContext.jsx
 │   │   ├── services/        # API service layer
 │   │   │   └── api.js
 │   │   ├── App.js           # Main app component
 │   │   ├── index.js         # Entry point
 │   │   └── styles/          # CSS files
+│   ├── .env                 # Environment variables (not in git)
+│   ├── .env.example         # Example env file
 │   ├── package.json         # Node dependencies
 │   └── README.md
 ├── docs/                    # Documentation
@@ -216,6 +340,7 @@ Upload a plant leaf image to detect diseases.
 - Method: `POST`
 - Content-Type: `multipart/form-data`
 - Body: `file` (image file)
+- Headers: `Authorization: Bearer <firebase_token>` (optional, for logged-in users)
 
 **Response:**
 ```json
@@ -270,12 +395,12 @@ Check if the API is running.
 
 ### Architecture
 - **Model Type:** Convolutional Neural Network (CNN)
-- **Framework:** TensorFlow/Keras (or PyTorch)
+- **Framework:** TensorFlow/Keras
 - **Input Size:** 224x224 pixels
 - **Classes:** 15+ plant disease categories
 
 ### Training
-- **Dataset:** PlantVillage / Custom dataset
+- **Dataset:** PlantVillage Dataset
 - **Training Samples:** 50,000+ images
 - **Validation Accuracy:** ~95%
 - **Augmentation:** Rotation, flip, zoom, brightness adjustment
@@ -340,7 +465,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Your Name** - Reyan - clan6229@gmail.com
+**Reyan** - clan6229@gmail.com
 
 **Project Link:** https://github.com/reyan3/PlantReg
 
@@ -349,21 +474,76 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - PlantVillage Dataset for training data
+- Firebase team for authentication infrastructure
 - FastAPI community for excellent documentation
 - React team for the powerful framework
+- Google OAuth for seamless authentication
 - All contributors who have helped improve this project
 
 ---
 
 ## 🗺️ Roadmap
 
+### Completed ✅
+- [x] Firebase integration
+- [x] Google OAuth authentication
+- [x] User profile management
+- [x] Profile icon in navbar
+- [x] Bug fixes and stability improvements
+
+### In Progress 🚧
+- [ ] User detection history tracking
+- [ ] Firestore database integration
+- [ ] Email verification flow
+
+### Planned 📋
 - [ ] Add more plant species support
-- [ ] Implement user accounts and history tracking
 - [ ] Mobile app development (iOS/Android)
 - [ ] Multi-language support
 - [ ] Integration with plant care recommendations
 - [ ] Batch image processing
-- [ ] API rate limiting and authentication
+- [ ] Advanced user analytics dashboard
+- [ ] Social features (share detections)
+- [ ] Export detection reports (PDF)
+
+---
+
+## 🔒 Security
+
+### Authentication Security
+- Firebase Authentication provides industry-standard security
+- All passwords are hashed and never stored in plain text
+- OAuth tokens are securely managed
+- HTTPS required for production deployment
+
+### Best Practices
+- Never commit `.env` files to version control
+- Rotate API keys regularly
+- Use environment variables for all sensitive data
+- Enable Firebase security rules for production
+
+---
+
+## 🐛 Known Issues
+
+Currently, there are no known critical issues. If you encounter any problems:
+
+1. Check the [Issues](https://github.com/reyan3/PlantReg/issues) page
+2. Search for existing reports
+3. Create a new issue if needed with:
+   - Detailed description
+   - Steps to reproduce
+   - Screenshots (if applicable)
+   - Your environment details
+
+---
+
+## 📚 Additional Documentation
+
+- [Firebase Setup Guide](docs/firebase-setup.md)
+- [API Reference](docs/api-reference.md)
+- [Model Training Guide](docs/model-training.md)
+- [Deployment Guide](docs/deployment.md)
 
 ---
 
@@ -372,5 +552,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ for plant lovers worldwide**
 
 ⭐ Star this repo if you find it helpful!
+
+### Connect With Us
+
+[![GitHub](https://img.shields.io/badge/GitHub-reyan3-181717?logo=github)](https://github.com/reyan3)
 
 </div>
