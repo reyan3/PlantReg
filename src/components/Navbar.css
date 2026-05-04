@@ -156,7 +156,6 @@
 }
 
 .mob-nav-footer {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;

@@ -15,10 +15,6 @@ const Navbar = ({ user }) => { // 1. Added user prop
 
   document.body.className = darkmode ? "dark" : "";
 
-  Hamburger
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "auto");
-
   // Logout Handler
   const handleLogout = async () => {
     await auth.signOut();
