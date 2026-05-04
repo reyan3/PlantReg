@@ -18,36 +18,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# We use the processor from the official Google repo because it's complete
-MODEL_ID = "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification"
-PROCESSOR_ID = "google/mobilenet_v2_1.0_224"
-
-# This pulls the correct image processing logic (224x224, normalization, etc.)
-processor = AutoImageProcessor.from_pretrained(PROCESSOR_ID)
-model = AutoModelForImageClassification.from_pretrained(MODEL_ID)
-
-# -------------------- LOAD MODEL ONCE --------------------
-
+# Load the model only once
 classifier = pipeline(
     "image-classification",
-    model=model,
-    image_processor=processor, # Inject the working processor here
+    model="linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
     device=-1
 )
 
-# -------------------- HEALTH CHECK (FOR UPTIMEROBOT) --------------------
-@app.get("/")
-def root():
-    return {"status": "PlantReg backend is running"}
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
-
-
-# -------------------- SMART FUZZY MATCH --------------------
+# 🔥 SMART FUZZY MATCHING FUNCTION (works 100%)
 def match_label(label: str, disease_dict: dict):
     label = label.lower().replace("_", " ").strip()
     keys = list(disease_dict.keys())
@@ -83,5 +62,4 @@ async def predict(file: UploadFile = File(...)):
         **extra_info
     }
 
-# Run locally:
-# uvicorn model.disease_detect:app --reload
+#  uvicorn model.disease_detect:app --reload -> To Run in terminal
