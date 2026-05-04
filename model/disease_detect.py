@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
-from transformers import pipeline
+# Change: Use AutoImageProcessor instead of DefaultImageProcessor
+from transformers import AutoModelForImageClassification, AutoImageProcessor, pipeline
 from PIL import Image
 import io
 from fastapi.middleware.cors import CORSMiddleware
@@ -17,6 +18,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# We use the processor from the official Google repo because it's complete
+MODEL_ID = "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification"
+PROCESSOR_ID = "google/mobilenet_v2_1.0_224"
+
+print("Loading model and processor...")
+
+# This pulls the correct image processing logic (224x224, normalization, etc.)
+processor = AutoImageProcessor.from_pretrained(PROCESSOR_ID)
+model = AutoModelForImageClassification.from_pretrained(MODEL_ID)
+
+# -------------------- LOAD MODEL ONCE --------------------
+
+classifier = pipeline(
+    "image-classification",
+    model=model,
+    image_processor=processor, # Inject the working processor here
+    device=-1
+)
+print("Model loaded successfully!")
+
 # -------------------- HEALTH CHECK (FOR UPTIMEROBOT) --------------------
 @app.get("/")
 def root():
@@ -26,12 +47,8 @@ def root():
 def health():
     return {"status": "ok"}
 
-# -------------------- LOAD MODEL ONCE --------------------
-classifier = pipeline(
-    "image-classification",
-    model="linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
-    device=-1  # CPU
-)
+
+
 
 # -------------------- SMART FUZZY MATCH --------------------
 def match_label(label: str, disease_dict: dict):
