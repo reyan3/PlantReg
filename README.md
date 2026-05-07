@@ -19,7 +19,7 @@ PlantReg is an intelligent web application that leverages machine learning to de
 - [Technologies Used](#️-technologies-used)
 - [Getting Started](#-getting-started)
 - [Firebase Setup](#-firebase-setup)
-- [Project Structure](#-project-structure)
+- [Project Structure](#-project-structure-example)
 - [API Documentation](#-api-documentation)
 - [Model Information](#-model-information)
 - [Contributing](#-contributing)
@@ -71,7 +71,7 @@ Try it out with sample images or upload your own plant leaf photos!
 ### Disease Detection Results
 <img width="600" height="300" alt="Screenshot 2025-12-14 175122" src="https://github.com/user-attachments/assets/4976d380-15fe-4310-b115-2efafd7d7bf0" />
 
-### Authentication & Profile
+### Disease Library and Contact
 <img width="600" height="300" alt="Screenshot 2025-12-14 175021" src="https://github.com/user-attachments/assets/a0069b92-2a5f-4d60-b5c0-f4b3a5833953" />
 <img width="600" height="300" alt="Screenshot 2025-12-14 175028" src="https://github.com/user-attachments/assets/e347140c-7899-4530-b231-6c9d8004c2a2" />
 <img width="600" height="300" alt="Screenshot 2025-12-14 175135" src="https://github.com/user-attachments/assets/86916339-fb9c-4993-98a5-a5c2ff461432" />
@@ -123,11 +123,6 @@ Try it out with sample images or upload your own plant leaf photos!
 - **Firebase Firestore** - NoSQL cloud database (optional)
 - **Google OAuth 2.0** - Third-party authentication
 
-### Machine Learning
-- **Custom CNN Model** - Trained on PlantVillage dataset
-- **Image Classification** - Multi-class disease detection
-- **Data Augmentation** - Improved model robustness
-
 ---
 
 ## 🚀 Getting Started
@@ -155,8 +150,8 @@ pip --version
 #### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/reyan3/plantreg.git
-cd plantreg
+git clone https://github.com/reyan3/PlantReg.git
+cd PlantReg
 ```
 
 #### 2️⃣ Backend Setup
@@ -195,7 +190,7 @@ cd frontend
 npm install
 
 # Start the development server
-npm start
+npm run dev
 ```
 
 The frontend will start at **http://localhost:5173**
@@ -275,7 +270,111 @@ export const googleProvider = new GoogleAuthProvider();
 
 ---
 
-## 📁 Project Structure
+```
+## ⚙️ How It Works
+
+PlantReg uses a deep learning model combined with a modern full-stack web application to detect plant diseases from uploaded leaf images.
+
+### 1️⃣ User Authentication
+Users can:
+- Create an account using email/password
+- Sign in with Google OAuth
+- Maintain secure sessions using Firebase Authentication
+
+Authentication enables a personalized experience and future support for detection history tracking.
+
+---
+
+### 2️⃣ Upload Plant Leaf Image
+Users upload a plant leaf image through the React frontend.
+
+Supported features:
+- Drag & drop image upload
+- Mobile-friendly image selection
+- Instant preview before analysis
+
+The frontend sends the image securely to the FastAPI backend.
+
+---
+
+### 3️⃣ Backend Image Processing
+The FastAPI server:
+- Receives the uploaded image
+- Preprocesses and resizes it
+- Converts it into a format suitable for the ML model
+
+Image preprocessing helps improve prediction consistency and accuracy.
+
+---
+
+### 4️⃣ AI Disease Detection
+The trained deep learning model analyzes the image and predicts:
+- Plant species
+- Disease type (if infected)
+- Confidence score
+
+The model was trained using the PlantVillage dataset with thousands of plant leaf images.
+
+Example prediction:
+{
+  "prediction": "Tomato Late Blight",
+  "confidence": 0.96
+}
+
+### 5️⃣ Disease Information & Recommendations
+After prediction, PlantReg displays:
+- Disease name
+- Symptoms
+- Description
+- Suggested treatments and prevention tips
+
+This helps users quickly understand the condition affecting their plants.
+
+---
+
+### 6️⃣ Response Display
+The React frontend displays:
+- Uploaded image preview
+- Predicted disease
+- Confidence percentage
+- Disease details
+- Treatment suggestions
+
+The interface is fully responsive and optimized for desktop and mobile devices.
+
+---
+
+### 7️⃣ Firebase-Powered User Experience
+Firebase handles:
+- Secure authentication
+- Session persistence
+- User profile management
+- Google sign-in integration
+
+Future updates will also include:
+- Cloud-based detection history
+- Saved analyses
+- Personalized dashboards
+
+## 🔄 Workflow Overview
+User Uploads Plant Leaf Image
+              ↓
+React Frontend Sends Image
+              ↓
+FastAPI Backend Receives Image
+              ↓
+Image Preprocessing
+              ↓
+Deep Learning Model Prediction
+              ↓
+Disease + Confidence Score Generated
+              ↓
+Disease Information Retrieved
+              ↓
+Results Displayed to User
+
+```
+## 📁 Project Structure (example)
 
 ```
 PlantReg/
@@ -286,7 +385,6 @@ PlantReg/
 │   │   └── model_utils.py   # Model loading and prediction utilities
 │   ├── disease_info.py      # Disease information database
 │   ├── requirements.txt     # Python dependencies
-│   └── tests/               # Backend tests
 ├── frontend/                # React frontend
 │   ├── public/              # Static files
 │   │   ├── index.html
@@ -393,22 +491,10 @@ Check if the API is running.
 
 ## 🤖 Model Information
 
-### Architecture
-- **Model Type:** Convolutional Neural Network (CNN)
-- **Framework:** TensorFlow/Keras
-- **Input Size:** 224x224 pixels
-- **Classes:** 15+ plant disease categories
-
 ### Training
 - **Dataset:** PlantVillage Dataset
 - **Training Samples:** 50,000+ images
 - **Validation Accuracy:** ~95%
-- **Augmentation:** Rotation, flip, zoom, brightness adjustment
-
-### Performance
-- **Inference Time:** <1 second per image
-- **Model Size:** ~50MB
-- **Supported Formats:** JPG, PNG, JPEG
 
 ---
 
@@ -420,7 +506,7 @@ We welcome contributions from the community! Here's how you can help:
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/yourusername/plantreg.git
+   git clone https://github.com/reyan3/PlantReg.git
    ```
 
 2. **Create a Feature Branch**
@@ -473,7 +559,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- PlantVillage Dataset for training data
 - Firebase team for authentication infrastructure
 - FastAPI community for excellent documentation
 - React team for the powerful framework
@@ -504,7 +589,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Batch image processing
 - [ ] Advanced user analytics dashboard
 - [ ] Social features (share detections)
-- [ ] Export detection reports (PDF)
 
 ---
 
@@ -542,14 +626,11 @@ Currently, there are no known critical issues. If you encounter any problems:
 
 - [Firebase Setup Guide](docs/firebase-setup.md)
 - [API Reference](docs/api-reference.md)
-- [Model Training Guide](docs/model-training.md)
 - [Deployment Guide](docs/deployment.md)
 
 ---
 
 <div align="center">
-
-**Made with ❤️ for plant lovers worldwide**
 
 ⭐ Star this repo if you find it helpful!
 
