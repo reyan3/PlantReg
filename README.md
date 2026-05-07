@@ -622,14 +622,6 @@ Currently, there are no known critical issues. If you encounter any problems:
 
 ---
 
-## 📚 Additional Documentation
-
-- [Firebase Setup Guide](docs/firebase-setup.md)
-- [API Reference](docs/api-reference.md)
-- [Deployment Guide](docs/deployment.md)
-
----
-
 <div align="center">
 
 ⭐ Star this repo if you find it helpful!
